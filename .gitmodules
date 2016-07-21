@@ -1,0 +1,3 @@
+[submodule "closhell"]
+	path = closhell
+	url = https://github.com/MateuszKubuszok/Closhell
