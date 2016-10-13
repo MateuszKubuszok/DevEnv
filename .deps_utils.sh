@@ -1,12 +1,13 @@
 #!/bin/bash
 
 install_managed_deps="$(cat <<-BODY
+	deps="\$1"
 	echo "Installing managed dependencies"
 	while true; do
 		read -p "  do you want to run apt-get now [y/n]: " yn
 		case \$yn in
 			[Yy]* )
-				sudo apt-get install -y emacs sbt tmux vim zsh && echo "  apt-get deps installed successfully"
+				sudo apt-get install -y \$deps && echo "  apt-get deps installed successfully"
 				break
 				;;
 			[Nn]* )
