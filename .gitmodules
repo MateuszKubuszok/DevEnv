@@ -10,3 +10,9 @@
 [submodule "neovim"]
 	path = neovim
 	url = https://github.com/neovim/neovim.git
+[submodule "vim/bundle/hybrid"]
+	path = vim/bundle/hybrid
+	url = https://github.com/w0ng/vim-hybrid
+[submodule "vim/bundle/ctrlp"]
+	path = vim/bundle/ctrlp
+	url = https://github.com/kien/ctrlp.vim
