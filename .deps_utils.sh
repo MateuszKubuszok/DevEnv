@@ -1,5 +1,7 @@
 #!/bin/bash
 
+this_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 install_managed_deps="$(cat <<-BODY
 	deps="\$1"
 	echo "Installing managed dependencies"
@@ -27,6 +29,13 @@ install_unmanaged_deps="$(cat <<-BODY
 			  echo "  installing multi-user RVM"
 				gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 || (curl -sSL https://rvm.io/mpapis.asc | gpg --import -)
 				curl -sSL https://get.rvm.io | sudo bash -s stable && echo "  RVM installed successfully"
+
+				# TODO: https://github.com/zyedidia/micro/releases/download/nightly/micro-1.1.2-dev.18-linux64.tar.gz
+
+				echo "  installing neovim"
+				pushd neovim > /dev/null
+				make > /dev/null && sudo make install > /dev/null && echo " neovim installed successfully"
+				popd > /dev/null
 				break
 				;;
 			[Nn]* )
