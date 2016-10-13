@@ -23,20 +23,45 @@ BODY
 install_unmanaged_deps="$(cat <<-BODY
 	echo "Installing unmanaged dependencies"
 	while true; do
-		read -p "  do you want to install deps now [y/n]: " yn
+		read -p "  do you want to install micro now [y/n]: " yn
+		case \$yn in
+			[Yy]* )
+				if [ ! -f "/tmp/micro.tar.gz" ]; then
+					wget https://github.com/zyedidia/micro/releases/download/nightly/micro-1.1.2-dev.18-linux64.tar.gz -O /tmp/micro.tar.gz
+				fi
+				pushd /usr/local/bin
+				sudo tar -xvzf /tmp/micro.tar.gz micro-1.1.2-dev.18/micro
+				popd
+				break
+				;;
+			[Nn]* )
+				break
+				;;
+		esac
+	done
+	while true; do
+		read -p "  do you want to install neovim now [y/n]: " yn
+		case \$yn in
+			[Yy]* )
+				echo "  installing neovim"
+				sudo apt-get install -y libtool libtool-bin autoconf automake cmake g++ pkg-config unzip > /dev/null
+				pushd neovim > /dev/null
+				make CMAKE_BUILD_TYPE=Release > /dev/null && sudo make install > /dev/null && echo " neovim installed successfully"
+				popd > /dev/null
+				break
+				;;
+			[Nn]* )
+				break
+				;;
+		esac
+	done
+	while true; do
+		read -p "  do you want to install RVM now [y/n]: " yn
 		case \$yn in
 			[Yy]* )
 			  echo "  installing multi-user RVM"
 				gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 || (curl -sSL https://rvm.io/mpapis.asc | gpg --import -)
 				curl -sSL https://get.rvm.io | sudo bash -s stable && echo "  RVM installed successfully"
-
-				# TODO: https://github.com/zyedidia/micro/releases/download/nightly/micro-1.1.2-dev.18-linux64.tar.gz
-
-				echo "  installing neovim"
-				pushd neovim > /dev/null
-				make > /dev/null && sudo make install > /dev/null && echo " neovim installed successfully"
-				popd > /dev/null
-				break
 				;;
 			[Nn]* )
 				break
