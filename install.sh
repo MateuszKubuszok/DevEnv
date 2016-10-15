@@ -4,7 +4,7 @@ this_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source "$this_dir/closhell/closhell"
 source "$this_dir/.deps_utils.sh"
 
-call "$install_managed_deps" "emacs sbt tmux vim zsh"
+call "$install_managed_deps" "emacs mc sbt tmux vim zsh"
 
 call "$install_unmanaged_deps"
 
