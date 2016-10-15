@@ -1,0 +1,16 @@
+[giggle]
+	main-window-maximized = true
+	main-window-geometry = 456x169+422+183
+	file-view-vpane-position = 933
+	file-view-hpane-position = 329
+	history-view-vpane-position = 814
+	main-window-view = FileView
+[user]
+	name = Mateusz Kubuszok
+	email = mateusz.kubuszok@gmail.com
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+[color]
+	ui = true
+[push]
+	default = simple
