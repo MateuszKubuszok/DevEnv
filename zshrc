@@ -50,7 +50,7 @@ plugins=(colorize debian git git-extras github gradle lein sbt)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:$HOME/.rvm/bin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:$HOME/.rvm/bin:$HOME/.z"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -84,3 +84,4 @@ export ANDROID_HOME=/usr/share/android-sdk
 
 source /etc/profile.d/rvm.sh
 
+source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
