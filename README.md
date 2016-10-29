@@ -26,8 +26,11 @@ cd X
 For my own use.
 
  * [coreutils](http://www.catonmat.net/download/gnu-coreutils-cheat-sheet.pdf)
+ * [editors overall](http://hyperpolyglot.org/text-mode-editors)
  * [emacs](http://www.ic.unicamp.br/~helio/disciplinas/MC102/Emacs_Reference_Card.pdf)
+ * [shells overall](http://hyperpolyglot.org/unix-shells)
  * [ssh](http://pentestmonkey.net/cheat-sheet/ssh-cheat-sheet)
- * [tmux](https://www.cheatography.com/bechtold/cheat-sheets/tmux-the-terminal-multiplexer/)
+ * [tmux 1](https://www.cheatography.com/bechtold/cheat-sheets/tmux-the-terminal-multiplexer/)
+ * [tmux 2](http://hyperpolyglot.org/multiplexers)
  * [vim](http://vimsheet.com/)
  * [zsh](https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet)
