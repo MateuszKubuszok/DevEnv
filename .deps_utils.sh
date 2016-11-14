@@ -62,6 +62,21 @@ install_unmanaged_deps="$(cat <<-BODY
 			  echo "  installing multi-user RVM"
 				gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 || (curl -sSL https://rvm.io/mpapis.asc | gpg --import -)
 				curl -sSL https://get.rvm.io | sudo bash -s stable && echo "  RVM installed successfully"
+				break
+				;;
+			[Nn]* )
+				break
+				;;
+		esac
+	done
+	while true; do
+		read -p "  do you want to install Xiki now [y/n]: " yn
+		case \$yn in
+			[Yy]* )
+			  echo "  installing Xiki"
+			  chmod +x "$this_dir/xiki/install_xsh"
+				"$this_dir/xiki/install_xsh" && echo "  Xiki installed successfully"
+				break
 				;;
 			[Nn]* )
 				break

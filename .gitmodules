@@ -25,3 +25,6 @@
 [submodule "tmux-plugin-manager"]
 	path = tmux-plugin-manager
 	url = https://github.com/tmux-plugins/tpm
+[submodule "xiki"]
+	path = xiki
+	url = https://github.com/trogdoro/xiki.git
