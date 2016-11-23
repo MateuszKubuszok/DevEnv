@@ -10,6 +10,7 @@ call "$install_unmanaged_deps"
 
 mkdir -p "$HOME/.tmux/plugins"
 
+call "$create_symlink" "$HOME/.ammonite" "$this_dir/ammonite"
 call "$create_symlink" "$HOME/.bashrc" "$this_dir/bashrc"
 call "$create_symlink" "$HOME/.emacs.d" "$this_dir/emacs.d"
 call "$create_symlink" "$HOME/.gitconfig" "$this_dir/gitconfig"

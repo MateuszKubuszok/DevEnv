@@ -23,6 +23,18 @@ BODY
 install_unmanaged_deps="$(cat <<-BODY
 	echo "Installing unmanaged dependencies"
 	while true; do
+		read -p "  do you want to install ammonite now [y/n]: " yn
+		case \$yn in
+			[Yy]* )
+				sudo curl -L -o /usr/local/bin/amm https://git.io/vXVf5 && sudo chmod +x /usr/local/bin/amm
+				break
+				;;
+			[Nn]* )
+				break
+				;;
+		esac
+	done
+	while true; do
 		read -p "  do you want to install micro now [y/n]: " yn
 		case \$yn in
 			[Yy]* )
