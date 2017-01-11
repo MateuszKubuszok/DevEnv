@@ -116,6 +116,3 @@ export NVM_DIR="$HOME/.nvm"
 
 source /etc/profile.d/rvm.sh
 
-
-source ~/.xsh
-

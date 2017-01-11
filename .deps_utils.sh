@@ -81,20 +81,6 @@ install_unmanaged_deps="$(cat <<-BODY
 				;;
 		esac
 	done
-	while true; do
-		read -p "  do you want to install Xiki now [y/n]: " yn
-		case \$yn in
-			[Yy]* )
-			  echo "  installing Xiki"
-			  chmod +x "$this_dir/xiki/install_xsh"
-				"$this_dir/xiki/install_xsh" && echo "  Xiki installed successfully"
-				break
-				;;
-			[Nn]* )
-				break
-				;;
-		esac
-	done
 BODY
 )"
 

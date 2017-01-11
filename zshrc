@@ -87,5 +87,3 @@ source /etc/profile.d/rvm.sh
 source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
-source ~/.xsh
-
