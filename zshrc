@@ -82,7 +82,11 @@ source $ZSH/oh-my-zsh.sh
 
 export ANDROID_HOME=/usr/share/android-sdk
 
-source /etc/profile.d/rvm.sh
+if [ -f /etc/profile.d/rvm.sh ]; then
+  source /etc/profile.d/rvm.sh
+elif [ -f ~/.rvm/scripts/rvm ]; then
+  source ~/.rvm/scripts/rvm
+fi
 
 source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

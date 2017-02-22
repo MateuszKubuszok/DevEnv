@@ -2,14 +2,17 @@
 
 this_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+source "$this_dir/.system_dependent.sh"
+
 install_managed_deps="$(cat <<-BODY
 	deps="\$1"
 	echo "Installing managed dependencies"
-	while true; do
-		read -p "  do you want to run apt-get now [y/n]: " yn
+	while true
+	do
+		read -p "  do you want to run $PACKAGE_INSTALL now [y/n]: " yn
 		case \$yn in
 			[Yy]* )
-				sudo apt-get install -y \$deps && echo "  apt-get deps installed successfully"
+				sudo $PACKAGE_INSTALL \$deps && echo "  $PACKAGE_INSTALL deps installed successfully"
 				break
 				;;
 			[Nn]* )
@@ -22,7 +25,8 @@ BODY
 
 install_unmanaged_deps="$(cat <<-BODY
 	echo "Installing unmanaged dependencies"
-	while true; do
+	while true
+	do
 		read -p "  do you want to install ammonite now [y/n]: " yn
 		case \$yn in
 			[Yy]* )
@@ -34,7 +38,8 @@ install_unmanaged_deps="$(cat <<-BODY
 				;;
 		esac
 	done
-	while true; do
+	while true
+	do
 		read -p "  do you want to install micro now [y/n]: " yn
 		case \$yn in
 			[Yy]* )
@@ -51,12 +56,13 @@ install_unmanaged_deps="$(cat <<-BODY
 				;;
 		esac
 	done
-	while true; do
+	while true
+	do
 		read -p "  do you want to install neovim now [y/n]: " yn
 		case \$yn in
 			[Yy]* )
 				echo "  installing neovim"
-				sudo apt-get install -y libtool libtool-bin autoconf automake cmake g++ pkg-config unzip > /dev/null
+				sudo $PACKAGE_INSTALL libtool libtool-bin autoconf automake cmake g++ pkg-config unzip > /dev/null
 				pushd neovim > /dev/null
 				make CMAKE_BUILD_TYPE=Release > /dev/null && sudo make install > /dev/null && echo " neovim installed successfully"
 				popd > /dev/null
@@ -67,7 +73,8 @@ install_unmanaged_deps="$(cat <<-BODY
 				;;
 		esac
 	done
-	while true; do
+	while true
+	do
 		read -p "  do you want to install RVM now [y/n]: " yn
 		case \$yn in
 			[Yy]* )
@@ -91,7 +98,8 @@ create_symlink="$(cat <<-BODY
 	if [ -L "\$symlink" ]; then
 		echo "  symlink already set for \$symlink"
 	elif [ -e "\$symlink" ]; then
-		while true; do
+		while true
+		do
 			read -p "  \$symlink will be removed so that it could be linked to \$dir [y/n]: " yn
 			case \$yn in
 				[Yy]* )

@@ -114,5 +114,9 @@ export ANDROID_HOME=/usr/share/android-sdk
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-source /etc/profile.d/rvm.sh
+if [ -f /etc/profile.d/rvm.sh ]; then
+  source /etc/profile.d/rvm.sh
+elif [ -f ~/.rvm/scripts/rvm ]; then
+  source ~/.rvm/scripts/rvm
+fi
 
