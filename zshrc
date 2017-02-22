@@ -50,7 +50,7 @@ plugins=(colorize debian docker docker-compose git git-extras github gradle lein
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:$HOME/.rvm/bin:$HOME/.z"
+export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:$HOME/.rvm/bin:$HOME/.z"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
